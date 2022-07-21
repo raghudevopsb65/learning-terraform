@@ -34,3 +34,10 @@ resource "aws_instance" "web" {
   }
 }
 
+terraform {
+  backend "s3" {
+    bucket = "terraform-b65"
+    key    = "ex1/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
