@@ -14,6 +14,10 @@ output "x" {
   value = "Value of a = ${var.a}"
 }
 
+output "values" {
+  value = "Values, a = ${var.a}, b = ${var.b}, c = ${var.c} , d = ${var.d}"
+}
+
 // If you access variable with any combination of other strings then ${} is preferred
 
 variable "b" {}
