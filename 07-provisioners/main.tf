@@ -31,7 +31,7 @@ resource "null_resource" "null" {
     }
 
     inline = [
-      "uname -a"
+      "uname"
     ]
   }
 }
