@@ -11,3 +11,7 @@ resource "aws_instance" "web" {
     Name = "terraform-${count.index + 1}"
   }
 }
+
+output "public_ip_address" {
+  value = aws_instance.web.*.public_ip
+}
