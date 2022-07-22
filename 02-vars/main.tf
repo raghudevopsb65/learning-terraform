@@ -37,3 +37,15 @@ variable "sample" {
 output "sample" {
   value = var.sample[1]
 }
+
+
+variable "sample1" {
+  default = {
+    abc = 100
+    xyz = 200
+  }
+}
+
+output "sample1" {
+  value = var.sample1["xyz"]
+}
