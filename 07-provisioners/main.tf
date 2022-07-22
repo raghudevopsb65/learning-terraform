@@ -7,12 +7,27 @@ resource "aws_instance" "web" {
     Name = "terraform"
   }
 
+  //  provisioner "remote-exec" {
+  //    connection {
+  //      type     = "ssh"
+  //      user     = "root"
+  //      password = "DevOps321"
+  //      host     = self.public_ip
+  //    }
+  //
+  //    inline = [
+  //      "uname -a"
+  //    ]
+  //  }
+}
+
+resource "null_resource" "null" {
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
       user     = "root"
       password = "DevOps321"
-      host     = self.public_ip
+      host     = aws_instance.web.public_ip
     }
 
     inline = [
